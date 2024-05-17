@@ -131,3 +131,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",  # Example: Allow requests from this origin
     "https://istg-dev.vercel.app", # Add more origins as needed
 ]
+
+import os
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
