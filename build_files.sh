@@ -3,14 +3,14 @@
 # Exit immediately if a command exits with a non-zero status
 set -e
 
-# Install dependencies using pip3
+# Install dependencies
 pip3 install -r requirements.txt
-
-# Create the staticfiles directory if it doesn't exist
-mkdir -p staticfilesBuild
 
 # Collect static files
 python3 manage.py collectstatic --noinput
 
+# Ensure staticfilesBuild directory exists
+mkdir -p staticfilesBuild
+
 # Move collected static files to the build directory
-mv staticfiles staticfilesBuild
+mv staticfiles/* staticfilesBuild/
